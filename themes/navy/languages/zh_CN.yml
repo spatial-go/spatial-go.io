@@ -26,6 +26,8 @@ sidebar:
     basic_data_struct: 数据结构
     data_conversion: 数据转换
     spatial_calculation: 空间计算
+    grid_analysis: 格网分析
+    cluster_analysis: 聚类分析
 
     advanced_topics: 高级
     change_log: 更新日志

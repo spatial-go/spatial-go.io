@@ -7,6 +7,9 @@ docs:
     basic_data_struct: basic_data_struct.html
     data_conversion: data_conversion.html
     spatial_calculation: spatial_calculation.html
+    grid_analysis: grid_analysis.html
+    cluster_analysis: cluster_analysis.html
+
   advanced_topics:
     change_log: change_log.html
 

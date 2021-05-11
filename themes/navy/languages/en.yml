@@ -18,14 +18,16 @@ sidebar:
   docs:
     docs: Getting Started
     overview: Overview
-    introduction: 功能介绍
+    introduction: Introduction
 
-    install: 安装
+    install: Install
 
-    function: 功能模块
-    basic_data_struct: 数据结构
-    data_conversion: 数据转换
-    spatial_calculation: 空间计算
+    function: Function
+    basic_data_struct: Data Struct
+    data_conversion: Data Conversion
+    spatial_calculation: Spatial Calculation
+    grid_analysis: Grid Analysis
+    cluster_analysis: Cluster Analysis
 
     advanced_topics: Advanced Topics
     change_log: ChangeLog
