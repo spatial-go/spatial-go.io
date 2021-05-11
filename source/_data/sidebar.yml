@@ -2,7 +2,6 @@ docs:
   docs:
     overview: overview.html
     introduction: introduction.html
-  installation:
     install: install.html
   function:
     basic_data_struct: basic_data_struct.html
