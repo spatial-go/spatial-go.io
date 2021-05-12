@@ -1,3 +1,11 @@
+## Geometry
+Support for all Geometry types defined in the OGC Simple Features for SQL specification, including:
+
+> * Point and MultiPoint
+> * LineString and MultiLineString
+> * Polygon and MultiPolygon
+> * heterogeneous GeometryCollection
+
 ## Point
 Creates a Point Feature from a Position.
 ```
