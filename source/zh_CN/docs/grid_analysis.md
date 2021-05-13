@@ -1,18 +1,18 @@
-# Grid
+# 网格划分
 
-Grid division function module，which can divide a given area into grids, including square grids and hexagonal grids.
+将给定区域划分为网格，其中包括正方形网格和六边形网格。
 
-## Input & Output
+## 参数：
 
-**Input parameters：** bound,cellSize
+输入参数：bound（给定区域的geomtry信息转换为bound属性），cellSize（正方形和六边形的边长参数，单位为米）
 
-**Output parameters：** gridGeoms
+输出参数：gridGeoms（划分出来的网格的geomtry属性）
 
-**Remarks:** The input is the latitude and longitude coordinates, and the coordinates of the output grid are also the latitude and longitude coordinates
+**备注：** 输入的bound信息是经度和纬度的坐标，输出的网格的坐标也是经度和纬度坐标；
 
-## Example
+## 实例：
 
-**SquareGrid：**
+**四边形网格：**
 
 ```go
 package main
@@ -35,7 +35,7 @@ func main() {
 
 
 
-**HexagonGrid：**
+**六边形网格：**
 
 ```go
 package main
