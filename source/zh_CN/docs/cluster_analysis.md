@@ -1,4 +1,61 @@
+## K-Means
+k-means clustering partitions a multi-dimensional data set into k clusters, where each data point belongs to the cluster with the nearest mean, serving as a prototype of the cluster.
+
+> * When you have numeric, multi-dimensional data sets
+> * You don't have labels for your data
+> * You know exactly how many clusters you want to partition your data into
+
+### Example
+```
+import (
+	"github.com/geoos/clusters/kmeans"
+	"github.com/geoos/clusters"
+)
+
+// set up a random two-dimensional data set (float64 values between 0.0 and 1.0)
+var d clusters.PointList
+for x := 0; x < 1024; x++ {
+	d = append(d, clusters.Coordinates{
+		rand.Float64(),
+		rand.Float64(),
+	})
+}
+
+// Partition the data points into 16 clusters
+km := kmeans.New()
+clusters, err := km.Partition(d, 16)
+
+for _, c := range clusters {
+	fmt.Printf("Centered at x: %.2f y: %.2f\n", c.Center[0], c.Center[1])
+	fmt.Printf("Matching data points: %+v\n\n", c.Observations)
+}
+```
+
 ## DBScan
 
-Takes a set of points and partition them into clusters according to https://en.wikipedia.org/wiki/DBSCAN data clustering algorithm.
+(Lat, lon) points fast clustering using DBScan algorithm in Go.
 
+Given set of geo points, this library can find clusters according to specified params. There are several optimizations applied:
+
+> * distance calculation is using "fast" implementations of sine/cosine, with sqrt being removed
+> * to find points within eps distance k-d tree is being used
+> * edge case handling of identical points being present in the set
+
+### Example
+构建Point集合:
+```
+points := cluster.PointList{{30.258387, 59.951557}, {30.434124, 60.029499}, ...}
+```
+设定DBScan参数:
+
+> * eps 聚合半件 (单位 kilometers)
+> * minPoints 聚类最小点的数量
+
+eps 和 minPoints 共同定义了聚类的最小密度
+
+Run DBScan:
+```
+clusters, noise := cluster.DBScan(points, 0.8, 10) // eps is 800m, 10 points minimum in eps-neighborhood
+
+```
+DBScan 方法返回clusters集合 (每个聚类都是元数据点的结合)
