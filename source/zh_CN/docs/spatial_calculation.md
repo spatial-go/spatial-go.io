@@ -3,9 +3,13 @@
 
 ### 相交（Intersects）：
 
-如果两个几何的公共点都不与两个几何的内部相交，则 Touches 返回 true,否则返回 false。其中至少一个几何必须是 LineString、Polygon、MultiLineString 或 MultiPolygon。
+如果两个几何对象的交集不生成空集，则返回true,否则返回false
 
 **参数：**
+
+输入参数：geom1,geom2(判断是否相交的几何对象)
+
+输出参数：bool(判断结果),error(对应错误信息)
 
 **示例：**
 ```go
@@ -38,6 +42,11 @@ func main() {
 
 **参数：**
 
+输入参数：geom(需要做缓冲区的几何对象)
+
+输出参数：width(缓冲区距离),quadsegs(1/4圆内的边数量)
+
+
 **示例：**
 ```go
 package main
@@ -62,6 +71,10 @@ func main() {
 用于返回线串或多线串的长度。
 
 **参数：**
+
+输入参数：geom(需要计算长度的几何对象)
+
+输出参数：float64(对应的长度),error(对应错误信息)
 
 **示例：**
 ```go
@@ -90,6 +103,10 @@ func main() {
 
 **参数：**
 
+输入参数：geom1, geom2(判断是否相交的几何对象)
+
+输出参数：bool(判断结果),error(对应错误信息)
+
 **示例：**
 ```go
 package main
@@ -116,11 +133,16 @@ func main() {
 // true
 
 
-### 求并集（Union）
+### 并集（Union）
 
 返回两个源对象组合而成的几何对象。
 
 **参数：**
+
+输入参数：geom1, geom2(需要做交集的两个几何对象)
+
+输出参数：geometry(最终得到的几何对象),error(对应的错误信息)
+
 
 **示例：**
 ```go
