@@ -19,6 +19,10 @@ $ ./configure
 $ make
 $ sudo make install
 ```
+4. Install geoos
+```sh
+$ go get github.com/spatial-go/geoos
+```
 
 ## Documentation
 How to use `Geoos`:
