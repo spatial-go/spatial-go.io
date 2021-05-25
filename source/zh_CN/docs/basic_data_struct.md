@@ -1,4 +1,4 @@
-## Geometry
+# Geometry
 支持OGC中所有的空间数据类型，如下：
 
 > * Point and MultiPoint
