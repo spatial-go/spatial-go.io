@@ -1,8 +1,8 @@
-## Installation
+## 安装使用
 
-The project depends on [geos](https://github.com/libgeos/geos) (GEOS is a C++ port of the ​JTS Topology Suite), you need to complete the installation of `geos` first. The installation of `geos`:
+此项目需要依赖 [geos](https://github.com/libgeos/geos) (GEOS 是一个 C++库，是​JTS的拓展), 首先你需要安装 `geos` . 然后在安装 `geoos`:
 
-1. Mac OS X(via brew)
+1. Mac OS X(用 brew)
 ```sh
 $ brew install geos
 ```
@@ -10,7 +10,7 @@ $ brew install geos
 ```sh
 $ apt-get install libgeos-dev
 ```
-3. Build from source code
+3. 通过源代码安转
 ```sh
 $ wget http://download.osgeo.org/geos/geos-3.9.0.tar.bz2
 $ tar xvfj geos-3.9.0.tar.bz2
@@ -19,14 +19,14 @@ $ ./configure
 $ make
 $ sudo make install
 ```
-4. Install geoos
+4. 安装 geoos
 ```sh
 $ go get github.com/spatial-go/geoos
 ```
 
-## Documentation
-How to use `Geoos`:
-Example: Calculating `area` via `Geoos`
+## 快速入门
+怎样使用 `Geoos`:
+示例: 用`Geoos`计算`area`
 ```
 package main
 
