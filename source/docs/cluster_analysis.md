@@ -5,6 +5,7 @@ k-means clustering partitions a multi-dimensional data set into k clusters, wher
 > * You don't have labels for your data
 > * You know exactly how many clusters you want to partition your data into
 
+![](images/kmeans.png)
 ### Example
 ```
 import (
@@ -41,6 +42,7 @@ Given set of geo points, this library can find clusters according to specified p
 > * to find points within eps distance k-d tree is being used
 > * edge case handling of identical points being present in the set
 
+![](images/dbscan.png)
 ### Example
 Build list of points:
 ```
