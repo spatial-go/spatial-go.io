@@ -13,7 +13,7 @@ Grid division function module，which can divide a given area into grids, includ
 ## Example
 
 **SquareGrid：**
-
+![](images/square.png)
 ```go
 package main
 
@@ -36,7 +36,7 @@ func main() {
 
 
 **HexagonGrid：**
-
+![](images/grid.png)
 ```go
 package main
 

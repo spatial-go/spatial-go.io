@@ -15,7 +15,7 @@
 ## 示例
 
 ### 1.构建四边形格网
-
+![](images/square.png)
 ```go
 package main
 
@@ -36,7 +36,7 @@ func main() {
 ```
 
 ### 2.构建六边形格网
-
+![](images/grid.png)
 ```go
 package main
 
