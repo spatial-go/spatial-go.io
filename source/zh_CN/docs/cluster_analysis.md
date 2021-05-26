@@ -5,7 +5,7 @@ k-means聚类将多维数据集划分为k个聚类，每个数据点属于均值
 > * 数据没有标签
 > * 您确切地知道需要将数据划分到多少聚类中
 
-### Example
+### 示例
 ```go
 import (
 	"github.com/geoos/clusters/kmeans"
@@ -40,7 +40,7 @@ for _, c := range clusters {
 > * 为了在eps距离内找到点，我们使用k-d树
 > * 在集合中存在相同点的边缘情况处理
 
-### Example
+### 示例
 构建Point集合:
 ```go
 points := cluster.PointList{{30.258387, 59.951557}, {30.434124, 60.029499}, ...}
