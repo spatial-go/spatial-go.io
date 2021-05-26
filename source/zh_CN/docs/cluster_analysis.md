@@ -6,7 +6,7 @@ k-means聚类将多维数据集划分为k个聚类，每个数据点属于均值
 > * 您确切地知道需要将数据划分到多少聚类中
 
 ### Example
-```
+```go
 import (
 	"github.com/geoos/clusters/kmeans"
 	"github.com/geoos/clusters"
@@ -33,8 +33,7 @@ for _, c := range clusters {
 
 ## DBScan
 
-(Lat, lon) 在Go中使用DBScan算法快速聚类
-
+(Lat, lon) 在Go中使用DBScan算法快速聚类,
 给定一组地理点，这个库可以根据指定的参数找到簇。有几个优化应用:
 
 > * 距离计算使用了sine/cosine的“快速”实现，删除了sqrt
@@ -43,7 +42,7 @@ for _, c := range clusters {
 
 ### Example
 构建Point集合:
-```
+```go
 points := cluster.PointList{{30.258387, 59.951557}, {30.434124, 60.029499}, ...}
 ```
 设定DBScan参数:
@@ -54,7 +53,7 @@ points := cluster.PointList{{30.258387, 59.951557}, {30.434124, 60.029499}, ...}
 eps 和 minPoints 共同定义了聚类的最小密度
 
 Run DBScan:
-```
+```go
 clusters, noise := cluster.DBScan(points, 0.8, 10) // eps is 800m, 10 points minimum in eps-neighborhood
 
 ```
