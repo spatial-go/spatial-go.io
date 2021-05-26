@@ -1,9 +1,9 @@
 ## K-Means
-k-means clustering partitions a multi-dimensional data set into k clusters, where each data point belongs to the cluster with the nearest mean, serving as a prototype of the cluster.
+k-means聚类将多维数据集划分为k个聚类，每个数据点属于均值最近的聚类，作为聚类的原型。
 
-> * When you have numeric, multi-dimensional data sets
-> * You don't have labels for your data
-> * You know exactly how many clusters you want to partition your data into
+> * 当你有数值的、多维的数据集时
+> * 数据没有标签
+> * 您确切地知道需要将数据划分到多少聚类中
 
 ### Example
 ```
@@ -12,7 +12,7 @@ import (
 	"github.com/geoos/clusters"
 )
 
-// set up a random two-dimensional data set (float64 values between 0.0 and 1.0)
+// 设置一个随机的二维数据集(float64类型的值介于0.0和1.0之间)
 var d clusters.PointList
 for x := 0; x < 1024; x++ {
 	d = append(d, clusters.Coordinates{
@@ -21,7 +21,7 @@ for x := 0; x < 1024; x++ {
 	})
 }
 
-// Partition the data points into 16 clusters
+// 将数据点划分为16个聚类
 km := kmeans.New()
 clusters, err := km.Partition(d, 16)
 
@@ -33,13 +33,13 @@ for _, c := range clusters {
 
 ## DBScan
 
-(Lat, lon) points fast clustering using DBScan algorithm in Go.
+(Lat, lon) 在Go中使用DBScan算法快速聚类
 
-Given set of geo points, this library can find clusters according to specified params. There are several optimizations applied:
+给定一组地理点，这个库可以根据指定的参数找到簇。有几个优化应用:
 
-> * distance calculation is using "fast" implementations of sine/cosine, with sqrt being removed
-> * to find points within eps distance k-d tree is being used
-> * edge case handling of identical points being present in the set
+> * 距离计算使用了sine/cosine的“快速”实现，删除了sqrt
+> * 为了在eps距离内找到点，我们使用k-d树
+> * 在集合中存在相同点的边缘情况处理
 
 ### Example
 构建Point集合:
