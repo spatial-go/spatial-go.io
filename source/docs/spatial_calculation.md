@@ -2,7 +2,7 @@
 
 **Support basic GIS operations of spatial data. You can perform intersections, create buffers, calculate statistics, perform neighborhood analysis, and more.**
 
-## Intersect (Intersects)
+## Intersect
 
 If the intersection of two geometric objects does not generate an empty set, return true, otherwise return false
 
@@ -106,7 +106,7 @@ func main() {
 //1.4142135623730951
 ```
 
-## Equals (Equals)
+## Equals
 
 Compare two geometric objects, if the two geometric objects are exactly the same, return true, otherwise return false.
 
