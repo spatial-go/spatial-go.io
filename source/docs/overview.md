@@ -1,4 +1,4 @@
 title: Overview
 ---
 
-A library provides spatial data and geometric algorithms
+GEOOS is an open source library for spatial data and geometric algorithms from the spatial-go organization
