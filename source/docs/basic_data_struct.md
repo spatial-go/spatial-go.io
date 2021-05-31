@@ -23,3 +23,4 @@ Creates a Polygon Feature from an Array of LinearRings.
 ```
 polygon := Polygon{{{-5, 52},{-4, 56},{-2, 51},{-5, 52}}}
 ```
+……
