@@ -1,6 +1,6 @@
 ## 安装使用
 
-此项目需要依赖 [geos](https://github.com/libgeos/geos) (GEOS 是一个 C++库，是​JTS的拓展), 首先你需要安装 `geos` . 然后在安装 `geoos`:
+此项目需要依赖 [geos](https://github.com/libgeos/geos) (GEOS 是一个 C++库，是​JTS的拓展), 首先你需要安装 `geos` . 然后再安装 `geoos`:
 
 1. Mac OS X(用 brew)
 ```sh
@@ -25,8 +25,8 @@ $ go get github.com/spatial-go/geoos
 ```
 
 ## 快速入门
-怎样使用 `Geoos`:
-示例: 用`Geoos`计算`area`
+怎样使用 `GeoOS`:
+示例: 用`GeoOS`计算`area`
 ```
 package main
 

@@ -21,8 +21,8 @@ $ sudo make install
 ```
 
 ## Documentation
-How to use `Geoos`:
-Example: Calculating `area` via `Geoos`
+How to use `GeoOS`:
+Example: Calculating `area` via `GeoOS`
 ```
 package main
 
