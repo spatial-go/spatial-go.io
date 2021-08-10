@@ -1,25 +1,6 @@
 ## 安装使用
 
-此项目需要依赖 [geos](https://github.com/libgeos/geos) (GEOS 是一个 C++库，是​JTS的拓展), 首先你需要安装 `geos` . 然后再安装 `geoos`:
-
-1. Mac OS X(用 brew)
-```sh
-$ brew install geos
-```
-2. Ubuntu or Debian
-```sh
-$ apt-get install libgeos-dev
-```
-3. 通过源代码安转
-```sh
-$ wget http://download.osgeo.org/geos/geos-3.9.0.tar.bz2
-$ tar xvfj geos-3.9.0.tar.bz2
-$ cd geos-3.9.0
-$ ./configure
-$ make
-$ sudo make install
-```
-4. 安装 geoos
+安装 geoos
 ```sh
 $ go get github.com/spatial-go/geoos
 ```
