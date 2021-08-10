@@ -1,5 +1,10 @@
 # Change Log
 
+## [1.0.0] - 2021-08-09
+### Added
+- Reconstruction of geometric coverage, spatial analysis, vector construction and other related methods
+- No need to install GeoS geometric calculation library, independent implementation of space calculation methods
+
 ## [0.1.3] - 2021-04-07
 ### Added
 - Add hexagon grid method
