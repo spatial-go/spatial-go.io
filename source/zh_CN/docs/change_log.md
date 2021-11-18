@@ -1,13 +1,19 @@
 # 更新日志
+
+## [1.0.3] - 2021-11-18
+### 新增
+- Geobuf压缩与解压方法，可用于矢量数据压缩，紧凑的结构数据传输更加快速
+
 ## [1.0.2] - 2021-10-14
-新增
+### 新增
 - 检验空间几何图形有效性相关方法
 - WKB转换Str相关方法
 - 添加圆形几何图形方法
 
-修复
+### 修复
 - 生成buffer部分异常
 - 叠加分析异常
+
 ## [1.0.1] - 2021-08-30
 ### 新增
 - 创建空间索引相关方法包含Kd tree、Quad tree、Interval tree、Hilbert Packed R-tree
@@ -42,6 +48,7 @@
 - 新增`geojson`数据解析方法`geoos/geojson`
 - 新增`wkb`解析
 - 新增`GeometryCollection`解析处理
+
 ### 修改
 - `wkt`解析方法放到了`geoos/encoding/wkt`包下
 - 有关空间计算方法放到了`geoos/planar`包下
