@@ -1,4 +1,8 @@
 # Change Log
+
+## [1.0.4] - 2021-12-31
+### Added
+- Delaunay triangle method and Voronoi diagram
 ## [1.0.3] - 2021-11-18
 ### Added
 - Geobuf compression and decompression method can be used for vector data compression, compact structure data transfer faster
