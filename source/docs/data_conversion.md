@@ -33,12 +33,12 @@ package main
 import (
 	"fmt"
 
-	"github.com/spatial-go/geoos"
 	"github.com/spatial-go/geoos/encoding/wkt"
+	"github.com/spatial-go/geoos/space"
 )
 
 func main() {
-	multiPoint := geoos.MultiPoint{{-1, 0}, {-1, 2}, {-1, 3}, {-1, 4}, {-1, 7}, {0, 1}, {0, 3}}
+	multiPoint := space.MultiPoint{{-1, 0}, {-1, 2}, {-1, 3}, {-1, 4}, {-1, 7}, {0, 1}, {0, 3}}
 	getWkt := wkt.MarshalString(multiPoint)
 	fmt.Println(getWkt)
 }
@@ -81,14 +81,14 @@ package main
 import (
 	"fmt"
 
-	"github.com/spatial-go/geoos"
 	"github.com/spatial-go/geoos/geojson"
+	"github.com/spatial-go/geoos/space"
 )
 
 func main() {
 	var geom = geojson.Geometry{
 		Type:        "MultiPoint",
-		Coordinates: geoos.MultiPoint{{-1, 0}, {-1, 2}, {-1, 3}, {-1, 4}, {-1, 7}, {0, 1}, {0, 3}},
+		Coordinates: space.MultiPoint{{-1, 0}, {-1, 2}, {-1, 3}, {-1, 4}, {-1, 7}, {0, 1}, {0, 3}},
 	}
 	bytes, err := geom.MarshalJSON()
 	if err != nil {
@@ -123,7 +123,28 @@ func main() {
 	fmt.Println(reflect.TypeOf(geoosGeometry))
 }
 
-// geoos.MultiPoint
-
+// space.MultiPoint
 ```
+## WkbHex To Geometry
 
+```go
+package main
+
+import (
+	"fmt"
+
+	"github.com/spatial-go/geoos/encoding/wkb"
+)
+
+func main() {
+	var wkbHex = `0101000020E610000000000020D8135D400000004072054440`
+	geometry, err := wkb.GeomFromWKBHexStr(wkbHex)
+	if err != nil {
+		fmt.Println(err)
+	}
+
+	fmt.Println(geometry.Geom())
+}
+
+//[116.31006622314453 40.04254913330078]
+```
