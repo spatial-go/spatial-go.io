@@ -12,12 +12,13 @@ Example: Calculating `area` via `GeoOS`
 package main
 
 import (
-	"encoding/json"
+	"bytes"
 	"fmt"
-	"github.com/spatial-go/geoos"
-	"github.com/spatial-go/geoos/encoding/wkt"
-	"github.com/spatial-go/geoos/geojson"
+	"log"
+
+	"github.com/spatial-go/geoos/geoencoding"
 	"github.com/spatial-go/geoos/planar"
+	"github.com/spatial-go/geoos/space"
 )
 
 func main() {
@@ -25,7 +26,12 @@ func main() {
 	strategy := planar.NormalStrategy()
 	// Secondly, manufacturing test data and convert it to geometry
 	const polygon = `POLYGON((-1 -1, 1 -1, 1 1, -1 1, -1 -1))`
-	geometry, _ := wkt.UnmarshalString(polygon)
+	// geometry, _ := wkt.UnmarshalString(polygon)
+
+	buf := new(bytes.Buffer)
+	buf.Write([]byte(polygon))
+	geometry, _ := geoencoding.Read(buf, geoencoding.WKT)
+
 	// Last， call the Area () method and get result.
 	area, e := strategy.Area(geometry)
 	if e != nil {
@@ -36,22 +42,22 @@ func main() {
 
 	rawJSON := []byte(`
   { "type": "FeatureCollection",
-	"features": [
-	  { "type": "Feature",
-		"geometry": {"type": "Point", "coordinates": [102.0, 0.5]},
-		"properties": {"prop0": "value0"}
-	  }
-	]
+    "features": [
+      { "type": "Feature",
+        "geometry": {"type": "Point", "coordinates": [102.0, 0.5]},
+        "properties": {"prop0": "value0"}
+      }
+    ]
   }`)
 
-	fc := geojson.NewFeatureCollection()
-	_ = json.Unmarshal(rawJSON, &fc)
-	println("%p", fc)
+	buf1 := new(bytes.Buffer)
+	buf1.Write([]byte(rawJSON))
+	fc, _ := geoencoding.ReadGeoJSON(buf1, geoencoding.GeoJSON)
 
 	// Geometry will be unmarshalled into the correct geo.Geometry type.
-	point := fc.Features[0].Geometry.(geoos.Point)
-	println("%p", &point)
-
+	point := fc.Features[0].Geometry.Coordinates.(space.Point)
+	log.Println(point)
 }
+
 
 ```
