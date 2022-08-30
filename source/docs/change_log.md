@@ -1,4 +1,17 @@
 # Change Log
+## [1.1.3] - 2022-08-30
+### Fixed
+- Fixed some buffer analysis method bugs
+## [1.1.2] - 2022-07-28
+### Added
+- Added a method to check the geometry struct is correct.
+## [1.1.1.1] - 2022-07-22
+### Added
+- Added a method to repair the self intersection of a polygon.
+## [1.1.1] - 2022-07-20
+### Added
+- Optimize the performance of topological relation algorithm and geometric operation algorithm of geometry
+- It standardizes the encoding and decoding methods of geoencoding and improves the compatibility with geojson format
 ## [1.1.0] - 2022-05-26
 ### Added
 - Optimize the topological relation algorithm and geometric operation algorithm of geometry,
